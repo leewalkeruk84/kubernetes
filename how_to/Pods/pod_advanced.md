@@ -114,7 +114,7 @@ curl http://127.0.0.1:8080/
 ```bash
 kubectl create job -h | less
 ```
-> create the YAML file from here then can add new roperties before deployment
+> create the YAML file from here then can add new properties before deployment
 ```bash
 kubectl -n temp create job mynewjob --image=busybox --dry-run=client -o yaml -- sleep 5 > mynewjob.yaml
 ```
