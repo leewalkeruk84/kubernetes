@@ -8,7 +8,7 @@
 [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
 [Configure Pod Initialization](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/)
 
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -45,7 +45,7 @@ spec:
 [Sidecar](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)
 > A sidecar is a initContainer that has the restartPolicy field set to Always
 > **Note**: The example from the documentation is from a deployment, if needed just a pod, ammend
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -119,7 +119,7 @@ kubectl create job -h | less
 kubectl -n temp create job mynewjob --image=busybox --dry-run=client -o yaml -- sleep 5 > mynewjob.yaml
 ```
 > output from above
-```bash
+```yaml
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -142,7 +142,7 @@ spec:
 status: {}                            
 ```
 > you can now add properties in the Job spec as needed
-```bash
+```yaml
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -183,7 +183,7 @@ kubectl -n temp create cronjob my-job --image=busybox --schedule="*/1 * * * *" -
 kubectl -n temp create cronjob my-job --image=busybox --schedule="*/1 * * * *" --dry-run=client -o yaml > mynewcronjob.yaml -- date
 ```
 > output from above
-```bash
+```yaml
 apiVersion: batch/v1
 kind: CronJob
 metadata:
