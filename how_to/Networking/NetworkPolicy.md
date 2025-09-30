@@ -33,6 +33,7 @@ kubectl get svc,pod
 
 kubectl describe svc nginx # output below
 ```
+
 ```yaml
 Name:                     nginx
 Namespace:                default
