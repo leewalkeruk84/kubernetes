@@ -1,13 +1,13 @@
 # Deployments
 
 ## Labels and Selectors
-> Deployments created with kubectl create deploy automatically get the label app=deploymentname
-> Pods started with kubectl run automatically get the label run=podname
+> Deployments created with 'kubectl create deploy' automatically get the label app=deploymentname
+> Pods started with 'kubectl run' automatically get the label run=podname
 > The purpose of the label is to connect different objects
 > - Deployments tracking Pods
 > - Services connecting Pods
 > The selector is used on resources to specify which label to track
-> As a command line argument --selector can be sued to filter output on the precence of a label
+> As a command line argument --selector can be used to filter output on the precence of a label
 
 ```bash
 kubectl -n temp create deploy webapp --image=nginx --replicas=3
@@ -42,7 +42,7 @@ kubectl -n temp get deployments --show-labels
 kubectl -n temp get all --selector app=bluelabel
 
 # as a example, remove the app label from one of the pods
-kubectl -n label pod pod bluelabel-5dd-xxx app-
+kubectl -n label pod bluelabel-5dd-xxx app-
 ```
 
 ## Annotations
