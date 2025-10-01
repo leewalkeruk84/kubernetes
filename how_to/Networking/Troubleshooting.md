@@ -3,10 +3,11 @@
 > some common commands for troubleshooting
 
 ```bash
-kubectl get pods -o wide #shows Pod Ip addresses
+
+kubectl get pods -o wide # shows Pod Ip addresses
+kubectl get pods --show-labels  # shows Pod labels
 
 kubectl get svc # shows services
-
 kubectl describe svc ... # Shows Service successful connections to Pods
 # Important - check selector and label are matching
 
