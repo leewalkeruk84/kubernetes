@@ -9,14 +9,14 @@
 > - CrashLoopBackOff: the Pod has failed, and the cluster has restarted it
 > - Unknown: the Pod status could not be obtained
 > Current Pod status can be observed using
-> - ```bash kubectl get pods ```
+> - ```kubectl get pods ```
 
 ## Troubleshooting Failed Applications
 > First use
-> ``` bash kubectl describe ```
+> ```kubectl describe ```
 > - First look at the 'events'. then look at application state
 > - Check last state, particulary the app exit code
 > - if exit code is zero, the app started successfully, and no further investigation is needed here
 > - If it is not 0, then you need to use kubectl logs to investigate the app logs
 > - If app is continually restarting use the --previous to check logs for Pod that is no longer running
-> - ```bash kubectl logs --previous ```
+> - ```kubectl logs --previous ```
