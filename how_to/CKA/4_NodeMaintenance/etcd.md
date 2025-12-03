@@ -32,8 +32,8 @@ You now need to find the values for cacert, cert and key, plus the port of where
 # you want the following files, ca.crt, server.crt, server.key
 # you can get these by describing the etcd pod
 # Etcd is deployed as a Pod in the kube-system namespace. The name of the Pod is etcd-controlplane:
-kubectl get pods  -n kube-system
-kubectl describe pod etcd-controlplane -n kube-system
+kubectl get pods -n kube-system
+kubectl describe pod etcd-xxx -n kube-system
 ```
 
 Look for the value of the option `--listen-client-urls` for the endpoint URL. In the output below, the host is localhost and the port is 2379. 
@@ -74,7 +74,7 @@ https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#upgr
   As the kubelete process temporarily polls for static Pod fils, the etcd process will disappear within a minute
   use `sudo crictl ps` to verify it has been stopped
 - Rename etcd dir: 
-  `sudo mv /var/lib/etcd /vvar/lib/etcd-old`
+  `sudo mv /var/lib/etcd /var/lib/etcd-old`
 - Restore the back up
   `sudo etcdctl snapshot restore /backuplocation/file.bak --data-dir /var/lib/etcd`
 - Move static fils back
