@@ -15,7 +15,6 @@ helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard
 helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
 ```
 
-
 ## Demo using Helm Repos
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
